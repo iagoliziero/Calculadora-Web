@@ -18,18 +18,17 @@
         <input type="number" id="num2" placeholder="Digite o Segundo Número">  </input>
 
          <!-- Seletor de operações -->
-        <select name="opcoes" id="opcoes1">
+        <select name="operacao" id="operacao">
 
             <option value="soma"> Soma </option>
-            <option value="sub"> Subtração </option>
-            <option value="mut"> Mutiplicação </option>
-            <option value="div"> Divisão </option>
+            <option value="subtrair"> Subtração </option>
+            <option value="mutiplicar"> Mutiplicação </option>
+            <option value="dividir"> Divisão </option>
         </select>
 
             <!-- Botão para executar o cálculo -->
-        <button id="operacao" onclick="calculoResultado()"> Executar</button>
-        <output value> </output>
-        <h3>Resultado: <span id="resultado"> 0 </span> </h3>
+        <input class="botao" type="submit" value="calcular" onclick="calculo()">
+        <h3 id="resultadoSaida"> </h3>
         </main>
        
 

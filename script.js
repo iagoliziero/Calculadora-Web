@@ -1,13 +1,14 @@
-function calculoResultado() {
+function calculo() {
     //captura as variáveis
-    let numero1 = parseFloat(document.getElementById('num1').value);
-    let numero2 = parseFloat(document.getElementById('num2').value);
-    let operacao = document.getElementById(opcoes1).value;
+    let numero1 = Number(document.getElementById('num1').value);
+    let numero2 = Number(document.getElementById('num2').value);
+    let operacao = (document.getElementById('operacao').value);
+    let resultadoSaida = document.getElementById('resultadoSaida');
     let resultado;
      
     //caso for um valor inválido
     if(numero1 === "" || numero2 === "" || isNaN(numero1) || isNaN(numero2)) {
-        alert("insira um número válido") 
+        alert("insira um número válido")  
         return;  
     }
     //swich para escolher as operacoes
@@ -16,22 +17,23 @@ function calculoResultado() {
         resultado = numero1 + numero2;
         break;
 
-        case "sub":
+        case "subtrair":
         resultado = numero1 - numero2;
         break;
 
-        case "mut": 
+        case "mutiplicar": 
         resultado = numero1 * numero2;
         break;
 
-        case "div":
+        case "dividir":
         if(numero2 === 0) {
             alert("Divisão por 0 não é permitida")
+            return;
         }
         resultado = numero1 / numero2;
         default:
             alert("insira um número válido")
     }
     //resultado
-    document.getElementById("resultado").textContent = resultado;
+    resultadoSaida.textContent = "resultado: " + resultado;
 }
